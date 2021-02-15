@@ -1,10 +1,10 @@
 {
   "name": "app-serve",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Serve your app for production",
   "main": "dist/app-serve.cjs.js",
   "module": "dist/app-serve.esm.js",
-  "types": "dist/app-serve.d.ts",
+  "types": "types/app-serve.d.ts",
   "scripts": {
     "build": "rollup -c",
     "lint": "eslint src",
