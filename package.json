@@ -1,0 +1,48 @@
+{
+  "name": "app-serve",
+  "version": "0.1.0",
+  "description": "Serve your app for production",
+  "main": "dist/app-serve.cjs.js",
+  "module": "dist/app-serve.esm.js",
+  "types": "dist/app-serve.d.ts",
+  "scripts": {
+    "build": "rollup -c",
+    "lint": "eslint src",
+    "prepublishOnly": "npm run lint && npm run build"
+  },
+  "keywords": [
+    "server",
+    "app",
+    "static",
+    "serve"
+  ],
+  "files": [
+    "dist",
+    "types"
+  ],
+  "exports": {
+    ".": {
+      "require": "./dist/app-serve.cjs.js",
+      "import": "./dist/app-serve.esm.js",
+      "defualt": "./dist/app-serve.esm.js"
+    }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jleeson/app-serve.git"
+  },
+  "bugs": {
+    "url": "https://github.com/jleeson/app-serve/issues"
+  },
+  "homepage": "https://github.com/jleeson/app-serve#readme",
+  "author": "Jacob Leeson <jleeson2000@gmail.com> (https://twitter.com/jleesons)",
+  "license": "MIT",
+  "devDependencies": {
+    "eslint": "^7.20.0",
+    "rollup": "^2.39.0",
+    "rollup-plugin-terser": "^7.0.2"
+  },
+  "dependencies": {
+    "mime": "^2.5.0"
+  }
+}
