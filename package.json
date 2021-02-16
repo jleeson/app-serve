@@ -1,6 +1,6 @@
 {
   "name": "app-serve",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "Serve your app for production",
   "main": "dist/app-serve.cjs.js",
   "module": "dist/app-serve.esm.js",

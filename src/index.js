@@ -76,7 +76,7 @@ export default function serve(options = { contentBase: "" }) {
         process.on(signal, () => {
             if (server) {
                 server.close();
-                process.cwd();
+                process.exit();
             }
         });
     }
