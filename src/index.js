@@ -41,8 +41,6 @@ export default function serve(options = { contentBase: "" }) {
                 return found(response, filePath, content);
             }
 
-            console.log(error);
-
             if (error.code !== "ENOENT") {
                 response.writeHead(500);
                 response.end(
