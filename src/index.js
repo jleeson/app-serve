@@ -41,6 +41,8 @@ export default function serve(options = { contentBase: "" }) {
                 return found(response, filePath, content);
             }
 
+            console.log(error);
+
             if (error.code !== "ENOENT") {
                 response.writeHead(500);
                 response.end(
@@ -113,7 +115,7 @@ function readFileFromContentBase(contentBase, urlPath, callback) {
     let filePath = path.resolve(contentBase[0] || ".", "." + urlPath);
 
     /* if the url is a directory, load the directory index.html */
-    if (urlPath.endsWith("/")) {
+    if(fs.statSync(filePath).isDirectory()) {
         filePath = path.resolve(filePath, "index.html");
     }
 
