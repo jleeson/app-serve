@@ -115,7 +115,7 @@ function readFileFromContentBase(contentBase, urlPath, callback) {
     let filePath = path.resolve(contentBase[0] || ".", "." + urlPath);
 
     /* if the url is a directory, load the directory index.html */
-    if(fs.statSync(filePath).isDirectory()) {
+    if(fs.existsSync(filePath) && fs.statSync(filePath).isDirectory()) {
         filePath = path.resolve(filePath, "index.html");
     }
 
